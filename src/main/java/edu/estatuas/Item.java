@@ -1,9 +1,8 @@
 package edu.estatuas;
 
 interface Item {
-    getBid();
-    getAsk();
-    getSales();
-
+    int getBid();
+    int getAsk();
+    int getSale();
 
 }

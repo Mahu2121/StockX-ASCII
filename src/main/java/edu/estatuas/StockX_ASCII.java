@@ -16,7 +16,7 @@ public class StockX_ASCII
          * para conocer que propiedades
          * de la zapatilla han de printarse.
          */
- /*
+
         Item sneaker = new Sneaker("555088-105", "Jordan 1 Retro High Dark Mocha");
         System.out.println(Stockx.draw(sneaker));
 
@@ -214,7 +214,7 @@ public class StockX_ASCII
 
 
     }
-
+/*
     public static String draw(Item sneaker) {
         return
                 "\n\n\t\t" + sneaker.getAsk() + " Buy\t"
