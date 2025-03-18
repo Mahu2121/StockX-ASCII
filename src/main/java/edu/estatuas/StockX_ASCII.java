@@ -25,7 +25,7 @@ public class StockX_ASCII
          * y añadirlas a la zapatilla
          * en sus offers.
          */
-/*
+
         Bid bid = new Bid("13", 550);
         sneaker.add(bid);
         sneaker.add(new Bid("6", 200));
