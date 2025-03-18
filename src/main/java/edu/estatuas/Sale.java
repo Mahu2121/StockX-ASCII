@@ -1,22 +1,21 @@
 package edu.estatuas;
 
-public class Bid implements Offer {
-    private Integer bid;
+public class Sale implements Offer{
     private String size;
+    private Integer price;
 
-    Bid(String size,Integer bid) {
-        this.bid = bid;
+    Sale (String size, Integer price) {
         this.size = size;
+        this.price = price;
     }
 
     @Override
     public String getSize() {
         return size;
     }
+
     @Override
     public int getValue() {
-        return bid;
+        return price;
     }
-
-
 }
