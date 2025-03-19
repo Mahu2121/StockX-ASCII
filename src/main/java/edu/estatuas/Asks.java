@@ -1,24 +1,21 @@
 package edu.estatuas;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bids implements Criteria {
+public class Asks implements Criteria{
 
-    private List<Offer> bids;
+    private List<Offer> values;
 
-
-    Bids() {
-        this.bids = new ArrayList<>();
-
+    Asks() {
+        this.values = new ArrayList<>();
     }
 
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         for (Offer offer : sneaker.offers()) {
-            bids.add(offer);
+            values.add(offer);
         }
-        return bids;
+        return values;
     }
 }

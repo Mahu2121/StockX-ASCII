@@ -44,6 +44,28 @@ public class Stockx {
         sneaker.add(new Ask("9.5", 333));
         sneaker.add(new Ask("9.5", 340));
         sneaker.add(new Ask("13", 330));
+
+        /**
+         * Crear el filtro "Bids" que filtra
+         * solo las bids de entre las
+         * offers de la zapatilla.
+         */
+
+        Criteria bids = new Bids();
+        System.out.println("\n\t\t All BIDS");
+        bids.checkCriteria(sneaker).forEach(System.out::print);
+
+
+        /**
+         * Crea el filtro "Asks" que filtra
+         * solo las asks de entre las
+         * offers de la zapatilla.
+         */
+
+        Criteria asks = new Asks();
+        System.out.println("\n\t\t All ASKS");
+        asks.checkCriteria(sneaker).forEach(System.out::print);
+
     }
 
     public static String draw(Item sneaker) {
@@ -63,25 +85,6 @@ public class Stockx {
     }
 }
 
-        /**
-         * Crear el filtro "Bids" que filtra
-         * solo las bids de entre las
-         * offers de la zapatilla.
-         */
-/*
-        Criteria bids = new Bids();
-        System.out.println("\n\t\t All BIDS");
-        bids.checkCriteria(sneaker).forEach(System.out::print);
-
-        /**
-         * Crea el filtro "Asks" que filtra
-         * solo las asks de entre las
-         * offers de la zapatilla.
-         */
-/*
-        Criteria asks = new Asks();
-        System.out.println("\n\t\t All ASKS");
-        asks.checkCriteria(sneaker).forEach(System.out::print);
 
         /**
          * Muestra la bid maxima
