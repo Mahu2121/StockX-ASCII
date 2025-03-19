@@ -1,6 +1,6 @@
 package edu.estatuas;
 
-public interface Offer {
+interface Offer {
     String getSize();
     int getValue();
 
