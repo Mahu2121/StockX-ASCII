@@ -5,17 +5,18 @@ import java.util.List;
 
 public class Asks implements Criteria{
 
-    private List<Offer> values;
+    private List<Offer> asks;
 
     Asks() {
-        this.values = new ArrayList<>();
+        this.asks = new ArrayList<>();
     }
 
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
-        for (Offer offer : sneaker.offers()) {
-            values.add(offer);
-        }
-        return values;
+            for (Offer offer : sneaker.offers()) {
+                if(offer instanceof Ask) {
+                    asks.add(offer);
+                }
+            }return asks;
     }
 }

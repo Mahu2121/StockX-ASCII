@@ -17,8 +17,9 @@ public class Bids implements Criteria {
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         for (Offer offer : sneaker.offers()) {
-            bids.add(offer);
-        }
-        return bids;
+            if(offer instanceof Bid) {
+                bids.add(offer);
+            }
+        }return bids;
     }
 }
