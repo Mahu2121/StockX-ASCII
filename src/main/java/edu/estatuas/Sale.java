@@ -15,7 +15,7 @@ public class Sale implements Offer{
     }
 
     @Override
-    public int getValue() {
+    public int value() {
         return price;
     }
 }

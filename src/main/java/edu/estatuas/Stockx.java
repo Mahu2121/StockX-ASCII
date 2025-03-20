@@ -1,5 +1,7 @@
 package edu.estatuas;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -66,26 +68,6 @@ public class Stockx {
         System.out.println("\n\t\t All ASKS");
         asks.checkCriteria(sneaker).forEach(System.out::print);
 
-    }
-
-    public static String draw(Item sneaker) {
-        return
-                "\n\n\t\t" + sneaker.getAsk() + " Buy\t"
-                        + sneaker.getBid() + " Sell \n" +
-
-                        "\t\t" + " _    _" + "\n" +
-                        "\t\t" + "(_\\__/(,_" + "\n" +
-                        "\t\t" + "| \\ `_////-._" + "\n" +
-                        "\t\t" + "J_/___\"=> __/`\\" + "\n" +
-                        "\t\t" + "|=====;__/___./" + "\n" +
-                        "\t\t" + "\'-\'-\'-\"\"\"\"\"\"\"`" + "\n" +
-
-                        "\t" + sneaker.toString() + "\n" +
-                        "\t\tlast sale: " + sneaker.getSale();
-    }
-}
-
-
         /**
          * Muestra la bid maxima
          * de la zapatilla.
@@ -98,11 +80,29 @@ public class Stockx {
          * Guarda esta bid maxima en la
          * propiedad bid de sneaker.
          */
-/*
+
         Criteria maxBid = new MaxBid();
         List<Offer> maximum = maxBid.checkCriteria(sneaker);
         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
         System.out.println(Stockx.draw(sneaker));
+
+    }
+
+    public static String draw(Item sneaker) {
+        return
+                "\n\n\t\t" + sneaker.getAsk() + " Buy\t"
+                        + sneaker.getBid() + " Sell \n" +
+                        "\t\t" + " _    _" + "\n" +
+                        "\t\t" + "(_\\__/(,_" + "\n" +
+                        "\t\t" + "| \\ `_////-._" + "\n" +
+                        "\t\t" + "J_/___\"=> __/`\\" + "\n" +
+                        "\t\t" + "|=====;__/___./" + "\n" +
+                        "\t\t" + "\'-\'-\'-\"\"\"\"\"\"\"`" + "\n" +
+                        "\t" + sneaker.toString() + "\n" +
+                        "\t\tlast sale: " + sneaker.getSale();
+    }
+}
+
 
         /**
          * Muestra la ask minima
