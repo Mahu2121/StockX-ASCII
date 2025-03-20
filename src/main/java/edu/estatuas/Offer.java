@@ -4,5 +4,4 @@ interface Offer {
     String getSize();
     int value();
 
-
 }
