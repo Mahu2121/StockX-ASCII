@@ -16,11 +16,11 @@ public class MaxBid implements Criteria {
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         for (Offer offer : sneaker.offers()) {
-            if(offer instanceof Bid) {
+            if (offer instanceof Bid) {
                 maximum.add(offer);
                 maximum.sort(Comparator.comparingInt(Offer::value).reversed());
             }
-        }return maximum;
+        } return maximum;
     }
 }
 
