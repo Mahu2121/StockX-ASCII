@@ -9,6 +9,9 @@ public class Sale implements Offer{
         this.price = price;
     }
 
+    private int getPrice() {
+    return price;}
+
     @Override
     public String getSize() {
         return size;
@@ -17,5 +20,10 @@ public class Sale implements Offer{
     @Override
     public int value() {
         return price;
+    }
+
+    @Override
+    public String toString(){
+        return "\t \t \s" + this.getSize() + "\t" + this.getPrice() + "\n";
     }
 }

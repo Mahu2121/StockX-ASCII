@@ -86,6 +86,66 @@ public class Stockx {
         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
         System.out.println(Stockx.draw(sneaker));
 
+
+        /**
+         * Muestra la ask minima
+         * de la zapatilla.
+         *
+         * Crea el filtro MinAsk que filtra
+         * el minimo de las asks de la zapatilla.
+         * Devuelve la ask minima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta ask minima en la propiedad
+         * ask de sneaker.
+         */
+
+        Criteria minAsk = new MinAsk();
+        List<Offer> minimum = minAsk.checkCriteria(sneaker);
+        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Añade ventas (sales) de
+         * una zapatilla a sus offers.
+         * Las ventas se añaden segun fecha
+         * en la que se producen, de mas antigua
+         * a mas reciente.
+         */
+
+        Sale sale = new Sale("6", 356);
+        sneaker.add(sale);
+        sneaker.add(new Sale("9.5", 352));
+        sneaker.add(new Sale("9.5", 404));
+        sneaker.add(new Sale("13", 360));
+        sneaker.add(new Sale("13", 372));
+
+        /**
+         * Crear el filtro "Sales" que filtra
+         * solo las ventas /sales de entre las
+         * offers de la zapatilla.
+         */
+
+        Criteria sales = new Sales();
+        System.out.println("\n\t\t All SALES");
+        sales.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Crea un filtro que devuelva
+         * la ULTIMA de las ventas (que
+         * es la ultima en ser incluida
+         * en sneaker).
+         */
+/*
+        Criteria lastSale = new LastSale();
+
+        List<Offer> actualSale = lastSale.checkCriteria(sneaker);
+        sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+*/
+
+
+
     }
 
     public static String draw(Item sneaker) {
@@ -104,61 +164,6 @@ public class Stockx {
 }
 
 
-        /**
-         * Muestra la ask minima
-         * de la zapatilla.
-         *
-         * Crea el filtro MinAsk que filtra
-         * el minimo de las asks de la zapatilla.
-         * Devuelve la ask minima como unico
-         * elemento de una lista de offers.
-         *
-         * Guarda esta ask minima en la propiedad
-         * ask de sneaker.
-         */
-/*
-        Criteria minAsk = new MinAsk();
-        List<Offer> minimum = minAsk.checkCriteria(sneaker);
-        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
-        System.out.println(Stockx.draw(sneaker));
-
-        /**
-         * Añade ventas (sales) de
-         * una zapatilla a sus offers.
-         * Las ventas se añaden segun fecha
-         * en la que se producen, de mas antigua
-         * a mas reciente.
-         */
-/*
-        Sale sale = new Sale("6", 356);
-        sneaker.add(sale);
-        sneaker.add(new Sale("9.5", 352));
-        sneaker.add(new Sale("9.5", 404));
-        sneaker.add(new Sale("13", 360));
-        sneaker.add(new Sale("13", 372));
-
-        /**
-         * Crear el filtro "Sales" que filtra
-         * solo las ventas /sales de entre las
-         * offers de la zapatilla.
-         */
-/*
-        Criteria sales = new Sales();
-        System.out.println("\n\t\t All SALES");
-        sales.checkCriteria(sneaker).forEach(System.out::print);
-
-        /**
-         * Crea un filtro que devuelva
-         * la ULTIMA de las ventas (que
-         * es la ultima en ser incluida
-         * en sneaker).
-         */
-/*
-        Criteria lastSale = new LastSale();
-
-        List<Offer> actualSale = lastSale.checkCriteria(sneaker);
-        sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());
-        System.out.println(Stockx.draw(sneaker));
 
         /**
          * Mostrar info de la zapatilla
