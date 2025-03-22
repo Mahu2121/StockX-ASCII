@@ -21,7 +21,7 @@ public class Size implements Criteria {
     @Override
     public List<Offer> checkCriteria(Item sneaker){
         for (Offer offer : sneaker.offers()) {
-            if (offer.getSize() == this.size){
+            if (offer.getSize().equals(this.size)){
             this.sizes.add(offer);
             }
         } return this.sizes;
