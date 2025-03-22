@@ -2,6 +2,7 @@ package edu.estatuas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class AndCriteria implements Criteria {
 
@@ -18,10 +19,8 @@ public class AndCriteria implements Criteria {
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         for (Offer offer : sneaker.offers()) {
-            if (offer.getSize().equals(criteria)) {
-                this.andCriteriaList.add(offer);
-            }
-            if (offer.value() == otherCriteria) {
+            if (this.criteria.checkCriteria(sneaker).contains(offer)
+                    && otherCriteria.checkCriteria(sneaker).contains(offer)) {
                 this.andCriteriaList.add(offer);
             }
         }return andCriteriaList;
