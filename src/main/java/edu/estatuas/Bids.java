@@ -1,16 +1,15 @@
 package edu.estatuas;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Bids implements Criteria {
 
-    private List<Offer> bids;
+    private List<Offer> bidsList;
 
 
     Bids() {
-        this.bids = new ArrayList<>();
+        this.bidsList = new ArrayList<>();
 
     }
 
@@ -19,8 +18,8 @@ public class Bids implements Criteria {
     public List<Offer> checkCriteria(Item sneaker) {
         for (Offer offer : sneaker.offers()) {
             if(offer instanceof Bid) {
-                this.bids.add(offer);
+                this.bidsList.add(offer);
             }
-        }return this.bids;
+        }return this.bidsList;
     }
 }
