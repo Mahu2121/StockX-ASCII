@@ -22,7 +22,7 @@ public class Min implements Criteria {
             if (this.criteria.checkCriteria(sneaker).contains(offer)
                     && otherCriteria.checkCriteria(sneaker).contains(offer)) {
                 this.minAsks.add(offer);
-                minAsks.sort(Comparator.comparingInt(Offer::value).reversed());
+                minAsks.sort(Comparator.comparingInt(Offer::value));
             }
         }return minAsks;
     }
