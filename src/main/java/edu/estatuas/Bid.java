@@ -1,8 +1,7 @@
 package edu.estatuas;
 
-import java.util.List;
-
 public class Bid implements Offer {
+
     private Integer bid;
     private String size;
 
