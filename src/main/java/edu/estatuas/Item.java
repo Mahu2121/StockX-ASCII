@@ -1,6 +1,5 @@
 package edu.estatuas;
 
-import java.util.ArrayList;
 import java.util.List;
 
 interface Item {
