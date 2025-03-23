@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sneaker implements Item {
-    private String name;
-    private String style;
+    private final String name;
+    private final String style;
     private int sale;
     private int ask;
     private int bid;
