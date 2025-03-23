@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Asks implements Criteria{
-
     private List<Offer> asks;
 
     Asks() {
