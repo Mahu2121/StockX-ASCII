@@ -41,12 +41,11 @@
       <artifactId>assertj-core</artifactId>
       <version>${assertj.version}</version>
     </dependency>
-
-    <!-- JaCoCo -->
     <dependency>
-      <groupId>org.jacoco</groupId>
-      <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.8.12</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -137,5 +136,30 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <!-- Plugin JaCoCo para cobertura de código -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.12</version>
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
+
 </project>
