@@ -17,6 +17,9 @@ public class Sneaker implements Item {
         this.offers = new ArrayList<>();
     }
 
+    public int getOffersSize(){
+    return offers.size();}
+
     @Override
     public void setBid(int bid) {
         this.bid = bid;
